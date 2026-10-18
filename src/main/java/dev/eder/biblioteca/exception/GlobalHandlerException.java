@@ -15,6 +15,8 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
+
+//armarRespuesta es private: es un ayudante que solo usa esta clase, para no repetir las mismas dos líneas en cada método.
 //@ExceptionHandler = Este método se ejecuta cuando ocurre la excepción indicada.
 @Slf4j   //Crea el atributo log para escribir en la consola con niveles (info, warn, error). LOMBOK
 @RestControllerAdvice   //Esta clase atiende las excepciones de todos los controllers y responde en JSON.
@@ -59,7 +61,7 @@ public class GlobalHandlerException {
     }
 
 
-
+    //armarRespuesta es private: es un ayudante que solo usa esta clase, para no repetir las mismas dos líneas en cada método.
     private ResponseEntity<ErrorResponse> armarRespuesta(HttpStatus status, String mensaje, Map<String , String> errores){
         ErrorResponse body = new ErrorResponse(LocalDateTime.now(), status.value(), mensaje, errores);
         return ResponseEntity.status(status).body(body);
