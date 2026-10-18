@@ -37,7 +37,7 @@ public class Prestamo {
     private LocalDate fechaLimite;
 
     // queda vacía (null) hasta que el lector devuelve el libro
-    @Column(nullable = false)
+    @Column(name = "fecha_devolucion")
     private LocalDate fechaDevolucion;
 
     @Enumerated(EnumType.STRING) //guarda el texto ACTIVO. Sin esto guarda un número (0, 1) y si cambias el orden del enum se rompen los datos.

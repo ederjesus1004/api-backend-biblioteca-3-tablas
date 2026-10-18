@@ -28,7 +28,7 @@ public class CategoriaMapper {
                 .build();
     }
     // "  novela   negra " -> "novela negra"
-    private static String normalizarNombre(String nombre){
+    public static String normalizarNombre(String nombre){
         return nombre.trim().replaceAll("\\s+", " ");
     }
 }
